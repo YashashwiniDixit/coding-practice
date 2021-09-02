@@ -21,3 +21,20 @@ int main()
 
     return 0;
 }
+
+/*size of int 4
+
+size of float 4
+
+size of char 1
+
+size of bool 1
+
+size of double 8
+
+size of shortint 2
+
+size of longint 8*/
+
+
+
