@@ -14,8 +14,17 @@ import sys
 # The function accepts 2D_INTEGER_ARRAY arr as parameter.
 #
 
-def diagonalDifference(arr):
+def diagonalDifference(arr,n):
+    s1=0
+    t=n
+    s2=0
     # Write your code here
+    for i in range(0,n):
+        t-=1
+        s1+=arr[i][i]
+        s2+=arr[i][t]
+    s1=abs(s1-s2)
+    return s1
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
@@ -27,7 +36,7 @@ if __name__ == '__main__':
     for _ in range(n):
         arr.append(list(map(int, input().rstrip().split())))
 
-    result = diagonalDifference(arr)
+    result = diagonalDifference(arr,n)
 
     fptr.write(str(result) + '\n')
 
