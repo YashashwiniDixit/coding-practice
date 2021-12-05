@@ -1,0 +1,13 @@
+class Solution(object):
+    def numIdenticalPairs(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        l=len(nums)
+        k=0
+        for i in range(0,l-1):
+            for j in range(i+1,l):
+                if(nums[i]==nums[j]):
+                    k+=1
+        return k
