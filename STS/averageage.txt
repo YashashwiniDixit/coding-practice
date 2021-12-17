@@ -1,0 +1,46 @@
+import java.util.Scanner;
+public class MyClass {
+    public static void main(String args[]) {
+     Scanner sc=new Scanner(System.in);
+     int n;
+     n=sc.nextInt();
+     int a[]=new int[n];
+     char b[]=new char[n];
+     for(int i=0;i<n;i++)
+     {
+         a[i]=sc.nextInt();
+     }
+     for(int i=0;i<n;i++)
+     {
+         b[i]=sc.next().charAt(0);
+     }
+     int cf=0,sf=0,cm=0,sm=0;
+     for(int i=0;i<n;i++)
+     {
+         if(b[i]=='f')
+         {
+             cf++;
+             sf+=a[i];
+         }
+         else if(b[i]=='m')
+         {
+             cm++;
+             sm+=a[i];
+         }
+     }
+     sf=sf/cf;
+     sm=sm/cm;
+     if(sf>sm)
+     {
+         System.out.println("old female");
+     }
+     else if(sf<sm)
+     {
+         System.out.println("old male");
+     }
+     else if(sf==sm)
+     {
+         System.out.println("rare");
+     }
+    }
+}
