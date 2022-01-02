@@ -1,0 +1,14 @@
+class Solution:
+    # @param a : list of integers
+    # @param b : integer
+    # @return a list of integers
+    def rotateArray(self, a, b):
+        ret = []
+		n=len(a)
+        for i in xrange(len(a)):
+			if(i+b<n):
+            	ret.append(a[i + b])
+			else:
+				ret.append(a[(i+b)%n])
+
+        return ret
