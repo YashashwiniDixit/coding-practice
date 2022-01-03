@@ -1,0 +1,17 @@
+class Solution:
+    # @param A : list of integers
+    # @return a list of integers
+    def maxset(self, A):
+        l=[]
+        m=0
+        for i in A:
+            l1=[]
+            s=0
+            if i>=0:
+                s+=i
+                l1.append(i)
+            if(m<s):
+                m=s
+                for j in l1:
+                    l.append(i)
+        return l
