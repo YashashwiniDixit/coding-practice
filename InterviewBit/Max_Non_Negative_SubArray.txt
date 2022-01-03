@@ -2,16 +2,18 @@ class Solution:
     # @param A : list of integers
     # @return a list of integers
     def maxset(self, A):
-        l=[]
-        m=0
+        max_set = []
+        max_sum = -1
+        cur_set = []
+    
         for i in A:
-            l1=[]
-            s=0
-            if i>=0:
-                s+=i
-                l1.append(i)
-            if(m<s):
-                m=s
-                for j in l1:
-                    l.append(i)
-        return l
+            if(i>=0):
+                cur_set.append(i)
+                cur_sum = sum(cur_set)
+                if(cur_sum>max_sum):
+                    max_sum = cur_sum
+                    max_set = cur_set
+            else:
+                cur_set = []
+        
+        return max_set
