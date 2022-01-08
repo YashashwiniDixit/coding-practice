@@ -1,0 +1,80 @@
+class Solution:
+    # @param A : tuple of list of integers
+    # @return a list of integers
+    def spiralOrder(self, A):
+
+        l = len(A)
+
+        if l==0:
+            return []
+
+        ans = []
+        b = len(A[0])
+
+        mi = min(l, b)
+
+        for layer in range(mi//2) :
+            for j in range(layer, b-layer-1):
+                ans.append(A[layer][j])
+            for j in range(layer, l-layer-1):
+                ans.append(A[j][b-layer-1])
+            for j in range(layer, b-layer-1):
+                ans.append(A[l-layer-1][b-j-1])
+            for j in range(layer, l-layer-1):
+                ans.append(A[l-j-1][layer])
+
+        if mi%2==0:
+            return ans
+        
+        if l<b :
+            ind = l//2
+            for i in range(mi//2, b-mi//2):
+                ans.append(A[ind][i])
+        else :
+            ind = b//2
+            for i in range(mi//2, l-mi//2):
+                ans.append(A[i][ind])
+        return ans
+
+______________________________________________________________________
+
+class Solution:
+    # @param A : tuple of list of integers
+    # @return a list of integers
+    def spiralOrder(self, A):
+        if (len(A)==0 or len(A)==1):
+            return A[0]
+        ans = []
+		r = len(A)
+		c = len(A[0])
+		top = 0
+		right = c - 1
+		bottom = r - 1
+		left = 0
+		count = 0
+		while True:
+			for i in range(left, right + 1):
+				ans.append(A[top][i])
+				count += 1
+			top += 1
+			if count == r*c:
+				break
+			for i in range(top, bottom + 1):
+				ans.append(A[i][right])
+				count += 1
+			right -= 1
+			if count == r*c:
+				break
+			for i in range(right, left - 1, -1):
+				ans.append(A[bottom][i])
+				count += 1
+			bottom -= 1
+			if count == r*c:
+				break
+			for i in range(bottom, top - 1, -1):
+				ans.append(A[i][left])
+				count += 1
+			left += 1
+			if count == r*c:
+				break
+		return ans
