@@ -1,0 +1,17 @@
+class Solution:
+    # @param A : string
+    # @param B : integer
+    # @return a list of integers
+    def findPerm(self, A, B):
+        C=[0]*B
+        l=1
+        r=B
+        for i in range(B-2, -1, -1):
+            if(A[i]=="I"):
+                C[i+1]=r
+                r-=1
+            elif(A[i]=="D"):
+                C[i+1]=l
+                l+=1
+        C[0]=l
+        return C
