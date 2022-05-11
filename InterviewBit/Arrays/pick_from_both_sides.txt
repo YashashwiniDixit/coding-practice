@@ -1,0 +1,22 @@
+class Solution:
+    # @param A : list of integers
+    # @param B : integer
+    # @return an integer
+    def solve(self, arr, K):
+        size=len(arr)
+    
+        curr_points = 0
+        max_points = 0
+    
+        for i in range(K):
+            curr_points += arr[i]
+    
+        max_points = curr_points
+
+        j = size - 1
+    
+        for i in range(K - 1, -1, -1):
+            curr_points = (curr_points + arr[j] - arr[i])
+            max_points = max(curr_points, max_points)
+            j -= 1
+        return max_points
