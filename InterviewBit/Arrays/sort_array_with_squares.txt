@@ -1,0 +1,8 @@
+class Solution:
+    # @param A : list of integers
+    # @return a list of integers
+    def solve(self, A):
+        for i in range(len(A)):
+            A[i]=A[i]**2
+        A.sort()
+        return(A)
