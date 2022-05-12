@@ -5,3 +5,15 @@ int Solution::coverPoints(vector<int> &A, vector<int> &B) {
     }
     return ans;
 }
+
+
+class Solution:
+    # @param A : list of integers
+    # @param B : list of integers
+    # @return an integer
+    def coverPoints(self, A, B):
+        ans=0
+        l=len(A)
+        for i in range(1,l):
+            ans += max(abs(A[i]-A[i-1]),abs(B[i]-B[i-1]))
+        return ans
