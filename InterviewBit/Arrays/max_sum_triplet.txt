@@ -1,0 +1,52 @@
+# class Solution:
+#     # @param A : list of integers
+#     # @return an integer
+#     def solve(self, arr):
+#         ans = 0
+#         n=len(arr)
+#         for i in range(1, (n - 1)):
+#             max1 = 0
+#             max2 = 0
+#             for j in range(0, i):
+#                 if (arr[j] < arr[i]):
+#                     max1 = max(max1, arr[j])
+#             for j in range((i + 1), n):
+#                 if (arr[j] > arr[i]):
+#                     max2 = max(max2, arr[j])
+    
+#                     if (max1 > 0 and max2 >0):
+#                         ans = max(ans, max1 + arr[i] + max2)
+    
+#         return ans
+
+
+class Solution:
+    # @param A : list of integers
+    # @return an integer
+    def solve(self, A):
+        n = len(A)
+    
+    
+        right_max = [0]*n
+        maxs = A[-1]
+        for i in range(n-1,-1,-1):
+            right_max[i] = maxs
+            maxs = max(A[i],maxs)
+    
+        stack = []
+        ans = 0
+
+        for i in range(n):
+            if stack:
+                while stack and stack[-1]>=right_max[i]:
+                    stack.pop()
+
+                while stack and stack[-1]<A[i] and A[i]<right_max[i]:
+                    
+                    ans = max(ans,stack[-1]+A[i]+right_max[i])
+                    stack.pop()
+
+            stack.append(A[i])
+
+        return ans
+            
