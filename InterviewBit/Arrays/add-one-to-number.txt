@@ -1,0 +1,28 @@
+class Solution:
+    # @param A : list of integers
+    # @return a list of integers
+    def plusOne(self, A):
+    
+        A.reverse()
+        n=len(A)
+        carry = 0
+        
+        for i in range(n):
+            if(i == 0):
+                A[i] += (1 + carry)
+            elif(carry != 0):
+                A[i] += carry
+                
+            carry = A[i]//10
+            if(carry != 0):
+                A[i] = A[i] % 10
+        if(carry != 0):
+            A.append(carry)
+        A.reverse()
+        k=0
+        for i in A:
+            if(i==0):
+                k+=1
+            else:
+                break
+        return A[k:]
