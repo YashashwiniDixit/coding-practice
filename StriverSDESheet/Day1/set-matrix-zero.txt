@@ -1,0 +1,30 @@
+first attempt
+
+from os import *
+from sys import *
+from collections import *
+from math import *
+
+from typing import List
+def setZeros(matrix: List[List[int]]) -> None:
+	# Write your code here.
+    a=[]
+    b=[]
+    l=len(matrix)
+    l1=len(matrix[0])
+    for i in range(l):
+        for j in range(l1):
+            if(matrix[i][j]==0):
+                a.append(i)
+                b.append(j)
+    for i in a:
+        for j in range(l1):
+            matrix[i][j]=0
+    for i in range(l):
+        for j in b:
+            matrix[i][j]=0
+        
+        
+                
+                
+    pass
