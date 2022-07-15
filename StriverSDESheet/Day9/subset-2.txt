@@ -37,5 +37,5 @@ int main() {
    vector < int > nums = {1,2,2 };
    vector < vector < int >> ans = obj.subsetsWithDup(nums);
    printAns(ans);
-   return 0;
+   return (0);
 }
