@@ -2,4 +2,5 @@ https://www.geeksforgeeks.org/lmns-algorithms-gq/
 https://www.interviewbit.com/data-structure-interview-questions/
 https://www.interviewbit.com/problems/string-formatting/
 https://www.interviewbit.com/problems/dictionary/
-.
+https://www.interviewbit.com/problems/itertools-infinite-iterators/
+https://www.interviewbit.com/problems/itertools-combinatoric-iterators/
