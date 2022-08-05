@@ -1,0 +1,3 @@
+https://www.geeksforgeeks.org/python-data-structures/
+https://www.geeksforgeeks.org/google-interview-questions/
+https://techdevguide.withgoogle.com/paths/interview
