@@ -1,0 +1,23 @@
+# Online Python compiler (interpreter) to run Python online.
+# Write Python 3 code in this online editor and run it.
+from collections import Counter
+   
+# with dictionary
+count = Counter()
+print(count)
+
+#add 
+count.update(['A', 1,1,1,2,2,3])
+print(count)
+#subtract 
+count.subtract('A')
+print(count)
+if count['A']==0:
+    del count['A']
+print(count)
+
+#min
+print(count.most_common(1))
+
+#max
+print(count.most_common()[-1])
