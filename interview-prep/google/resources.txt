@@ -1,3 +1,7 @@
-https://www.geeksforgeeks.org/python-data-structures/
+https://www.geeksforgeeks.org/python-data-structures-and-algorithms/
 https://www.geeksforgeeks.org/google-interview-questions/
 https://techdevguide.withgoogle.com/paths/interview
+https://www.geeksforgeeks.org/must-coding-questions-company-wise/#google
+https://neetcode.io/
+https://drive.google.com/file/d/1LFh3iI6N4AJ0feLozlrGv-XWnow9-s1d/view
+https://www.geeksforgeeks.org/fundamentals-of-algorithms/
