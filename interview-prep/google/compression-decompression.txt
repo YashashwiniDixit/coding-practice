@@ -1,0 +1,51 @@
+'''
+stack
+
+- digits
+- alphabets and opening bracets
+
+traverse pop out all alphabets and opening brackets 
+when closing bracket is met pop out digit
+
+reverse and generate how much we want and push that back in
+
+then again do the same 
+until stack 2 is empty
+
+
+'''
+'''
+
+2[3[abc]3[abd]]e
+
+ans = ""
+ans += 2 * rec(2)
+2{
+	ans = ""
+  ans += 3 * rec(4)
+ 	4 {
+  	ans = ""
+    ans = "abc"
+    return abc
+  } 
+  ans += 3 * abc = abcabcabc
+  
+  ans += 3 * rec(10)
+  10 {
+  	ans = ""
+    ans = "abd"
+    return 
+  }
+}
+
+
+global string input
+
+func decompress(index) : 
+
+ans = ""
+while input[index]!="]"
+
+o(n) #recursion
+
+'''
