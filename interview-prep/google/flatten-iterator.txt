@@ -1,0 +1,43 @@
+class NoSuchElementException(Exception):
+    pass
+
+
+class InterleavingFlattener(object):
+    def __init__(self, iterlist):
+        self._queue = []
+        for iterator in iterlist:
+            self._insert_in_queue(iterator)
+
+    def _insert_in_queue(self, curr_iter) :
+        try:
+            self._queue.append(curr_iter)
+        except StopIteration:
+            pass
+
+    def next(self):
+        if not self.has_next():
+            raise NoSuchElementException
+        iterator = None
+        try : 
+            while True : 
+                iterator = self._queue.pop(0)
+                try : 
+                    element = next(iterator)
+                    self._insert_in_queue(iterator)
+                    return element
+                except : 
+                    continue
+        except : 
+            raise NoSuchElementException
+
+    def has_next(self):
+        return len(self._queue) != 0
+
+
+s = InterleavingFlattener(iter([iter([1, 2, 3]), iter([4, 5]), iter([6, 7, 8])]))
+while s.has_next():
+    try : 
+        print(s.next(),end=" ")
+    except NoSuchElementException : 
+        print("Completed")
+        break
